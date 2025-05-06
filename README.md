@@ -43,30 +43,18 @@ SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**
    - Custom RESTful API
    - Gemini AI-based crowd estimation on random coordinates
 6. **Display live feed** with count and heatmaps overlaid.
+   
+-----
 
-## 📐 System Architecture
+## 📍 Use Cases
+📦 Smart City Surveillance
 
-           ┌────────────┐
-           │ Stereo Cam │
-           └────┬───────┘
-                ↓
-    ┌─────────────────────┐
-    │ Raspberry Pi 4B     │
-    │ + YOLOv5 Inference  │
-    └────────┬────────────┘
-             ↓
-    ┌─────────────┐
-    │ Crowd Count │
-    │ + Heatmap   │
-    └────────┬────┘
-             ↓
- ┌─────────────────────┐
- │ GPS Location Module │
- └────────┬────────────┘
-          ↓
- ┌──────────────────────────────┐
- │ Google Sheets / Gemini API   │
- └──────────────────────────────┘
+🧑‍🤝‍🧑 Crowd Flow Monitoring
 
+🧯 Disaster Management & Rescue
+
+🎉 Event Safety
+
+🛰️ Aerial Mapping of Congested Zones
 
 
