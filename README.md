@@ -4,15 +4,16 @@ SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**
 
 ---
 
-## 📌 Key Features
+## 🔑 Key Features
 
-- 🎯 **Real-Time Crowd Detection** using YOLOv5 on Raspberry Pi 4B
-- 📷 **Stereo Camera Input** for improved area-based density estimation
-- 🌐 **GPS Integration** for location-aware data
-- 📊 **API Logging** to Google Sheets or cloud dashboards
-- 🛰️ **Drone-Mounted Setup** for aerial surveillance
-- 🔥 **Heatmap Overlay** and live video stream with count display
-- 🧠 **Gemini API Integration** for randomized location-based crowd intelligence
+✅ Real-time person detection using YOLOv5  
+📡 Live GPS-based crowd localization  
+📊 Crowd count, density heatmaps, and timestamp logging  
+🚁 Drone-compatible lightweight hardware  
+📤 Logs sent to Google Sheets / Firebase / Gemini API  
+🧠 Location-based AI queries with Gemini integration  
+💻 Portable Python-based implementation  
+🌐 Future-ready for dashboard/web integration  
 
 ---
 
@@ -42,5 +43,30 @@ SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**
    - Custom RESTful API
    - Gemini AI-based crowd estimation on random coordinates
 6. **Display live feed** with count and heatmaps overlaid.
+
+## 📐 System Architecture
+
+           ┌────────────┐
+           │ Stereo Cam │
+           └────┬───────┘
+                ↓
+    ┌─────────────────────┐
+    │ Raspberry Pi 4B     │
+    │ + YOLOv5 Inference  │
+    └────────┬────────────┘
+             ↓
+    ┌─────────────┐
+    │ Crowd Count │
+    │ + Heatmap   │
+    └────────┬────┘
+             ↓
+ ┌─────────────────────┐
+ │ GPS Location Module │
+ └────────┬────────────┘
+          ↓
+ ┌──────────────────────────────┐
+ │ Google Sheets / Gemini API   │
+ └──────────────────────────────┘
+
 
 
