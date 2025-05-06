@@ -17,18 +17,18 @@ SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**
 
 ---
 
-## 🛠️ Tech Stack
+## 🧠 Core Technologies Used
 
-| Component        | Technology Used                    |
-|------------------|-------------------------------------|
-| Object Detection | YOLOv5 (Ultralytics)                |
-| Device           | Raspberry Pi 4B + Stereo Camera     |
-| Language         | Python 3.x                          |
-| GPS              | NMEA Parser / GPS Module Integration|
-| APIs             | Google Sheets API, Gemini API       |
-| Visual Overlay   | OpenCV                              |
-| Drone Mounting   | Compatible with Pi and Stereo Setup |
-| Dashboard (optional) | Blynk / Firebase / Custom UI     |
+| Component           | Technology Stack & Explanation                                                                 |
+|---------------------|------------------------------------------------------------------------------------------------|
+| 🧠 Object Detection  | **YOLOv5 (You Only Look Once v5)** - Ultralight, real-time CNN-based detection model            |
+| 🎛️ Edge Device       | **Raspberry Pi 4B** - Quad-core ARM Cortex-A72 SoC, runs Python scripts & inference on-device   |
+| 👁️ Stereo Vision     | **Stereo Pi / Dual Camera Module** - Provides binocular vision for depth estimation & area calc |
+| 🛰️ Positioning       | **GPS (NMEA Protocol / GY-NEO6MV2)** - Acquires real-time geo-coordinates for tagging locations |
+| 🔌 API Integration   | **Google Sheets API, Firebase REST API, Gemini AI API** - For logging and querying smart data   |
+| 🔁 Communication     | **HTTP Requests & JSON Payloads** - Data transmitted securely to cloud or analytics platforms    |
+| 🚁 Aerial Platform   | **Quadcopter Drone Mount** - Mobile surveillance platform with wide area coverage               |
+| 🧰 Programming       | **Python, OpenCV, NumPy, Requests, Torch** - Core software stack for deployment and visualization|
 
 ---
 
@@ -46,6 +46,20 @@ SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**
    
 -----
 
+## 🛸 Drone Deployment Instructions
+
+1.Mount Raspberry Pi & camera module onto quadcopter
+
+2.Power Pi via drone’s onboard battery or Li-Po pack
+
+3.Establish remote SSH or telemetry connection
+
+4.Use onboard Wi-Fi or 4G dongle for API logging (optional)
+
+5.Run yolo_detect.py remotely via SSH or cronjob
+
+----
+
 ## 📍 Use Cases
 📦 Smart City Surveillance
 
@@ -56,5 +70,26 @@ SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**
 🎉 Event Safety
 
 🛰️ Aerial Mapping of Congested Zones
+
+## 🛠️ System Architecture
+
+```mermaid
+graph TD;
+    Camera[Stereo Camera 📷]
+    Pi[Raspberry Pi 4B 💻]
+    YOLO[YOLOv5 Inference Engine 🧠]
+    GPS[GPS Module 📡]
+    Heatmap[Heatmap Generator 🌡️]
+    API[API Integration 🔗]
+    Drone[Quadcopter Frame 🚁]
+
+    Camera --> Pi
+    Pi --> YOLO
+    Pi --> GPS
+    YOLO --> Heatmap
+    YOLO --> API
+    GPS --> API
+    Heatmap --> API
+    Pi --> Drone
 
 
