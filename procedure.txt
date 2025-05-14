@@ -1,0 +1,494 @@
+Microsoft Windows [Version 10.0.26100.3915]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\YOLO-CROWD\YOLO V5>python -m venv yolov5
+
+D:\YOLO-CROWD\YOLO V5>yolov5\Scripts\activate
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>pip install --upgrade google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib
+Collecting google-api-python-client
+  Obtaining dependency information for google-api-python-client from https://files.pythonhosted.org/packages/20/65/0127a66916b5777513dba9cc05b22aab89242750b191ccc19dd8f60d5cc9/google_api_python_client-2.168.0-py3-none-any.whl.metadata
+  Downloading google_api_python_client-2.168.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting google-auth
+  Obtaining dependency information for google-auth from https://files.pythonhosted.org/packages/ce/12/ad37a1ef86006d0a0117fc06a4a00bd461c775356b534b425f00dde208ea/google_auth-2.39.0-py2.py3-none-any.whl.metadata
+  Downloading google_auth-2.39.0-py2.py3-none-any.whl.metadata (6.2 kB)
+Collecting google-auth-httplib2
+  Obtaining dependency information for google-auth-httplib2 from https://files.pythonhosted.org/packages/be/8a/fe34d2f3f9470a27b01c9e76226965863f153d5fbe276f83608562e49c04/google_auth_httplib2-0.2.0-py2.py3-none-any.whl.metadata
+  Downloading google_auth_httplib2-0.2.0-py2.py3-none-any.whl.metadata (2.2 kB)
+Collecting google-auth-oauthlib
+  Obtaining dependency information for google-auth-oauthlib from https://files.pythonhosted.org/packages/ac/84/40ee070be95771acd2f4418981edb834979424565c3eec3cd88b6aa09d24/google_auth_oauthlib-1.2.2-py3-none-any.whl.metadata
+  Downloading google_auth_oauthlib-1.2.2-py3-none-any.whl.metadata (2.7 kB)
+Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client)
+  Obtaining dependency information for httplib2<1.0.0,>=0.19.0 from https://files.pythonhosted.org/packages/a8/6c/d2fbdaaa5959339d53ba38e94c123e4e84b8fbc4b84beb0e70d7c1608486/httplib2-0.22.0-py3-none-any.whl.metadata
+  Downloading httplib2-0.22.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client)
+  Obtaining dependency information for google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 from https://files.pythonhosted.org/packages/46/95/f472d85adab6e538da2025dfca9e976a0d125cc0af2301f190e77b76e51c/google_api_core-2.24.2-py3-none-any.whl.metadata
+  Downloading google_api_core-2.24.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting uritemplate<5,>=3.0.1 (from google-api-python-client)
+  Obtaining dependency information for uritemplate<5,>=3.0.1 from https://files.pythonhosted.org/packages/81/c0/7461b49cd25aeece13766f02ee576d1db528f1c37ce69aee300e075b485b/uritemplate-4.1.1-py2.py3-none-any.whl.metadata
+  Downloading uritemplate-4.1.1-py2.py3-none-any.whl.metadata (2.9 kB)
+Collecting cachetools<6.0,>=2.0.0 (from google-auth)
+  Obtaining dependency information for cachetools<6.0,>=2.0.0 from https://files.pythonhosted.org/packages/72/76/20fa66124dbe6be5cafeb312ece67de6b61dd91a0247d1ea13db4ebb33c2/cachetools-5.5.2-py3-none-any.whl.metadata
+  Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting pyasn1-modules>=0.2.1 (from google-auth)
+  Obtaining dependency information for pyasn1-modules>=0.2.1 from https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl.metadata
+  Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting rsa<5,>=3.1.4 (from google-auth)
+  Obtaining dependency information for rsa<5,>=3.1.4 from https://files.pythonhosted.org/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl.metadata
+  Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib)
+  Obtaining dependency information for requests-oauthlib>=0.7.0 from https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+Collecting googleapis-common-protos<2.0.0,>=1.56.2 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for googleapis-common-protos<2.0.0,>=1.56.2 from https://files.pythonhosted.org/packages/86/f1/62a193f0227cf15a920390abe675f386dec35f7ae3ffe6da582d3ade42c7/googleapis_common_protos-1.70.0-py3-none-any.whl.metadata
+  Downloading googleapis_common_protos-1.70.0-py3-none-any.whl.metadata (9.3 kB)
+Collecting protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.19.5 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.19.5 from https://files.pythonhosted.org/packages/97/e9/7b9f1b259d509aef2b833c29a1f3c39185e2bf21c9c1be1cd11c22cb2149/protobuf-6.30.2-cp310-abi3-win_amd64.whl.metadata
+  Using cached protobuf-6.30.2-cp310-abi3-win_amd64.whl.metadata (593 bytes)
+Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for proto-plus<2.0.0,>=1.22.3 from https://files.pythonhosted.org/packages/4e/6d/280c4c2ce28b1593a19ad5239c8b826871fc6ec275c21afc8e1820108039/proto_plus-1.26.1-py3-none-any.whl.metadata
+  Downloading proto_plus-1.26.1-py3-none-any.whl.metadata (2.2 kB)
+Collecting requests<3.0.0,>=2.18.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for requests<3.0.0,>=2.18.0 from https://files.pythonhosted.org/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl.metadata
+  Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2 (from httplib2<1.0.0,>=0.19.0->google-api-python-client)
+  Obtaining dependency information for pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2 from https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl.metadata
+  Using cached pyparsing-3.2.3-py3-none-any.whl.metadata (5.0 kB)
+Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth)
+  Obtaining dependency information for pyasn1<0.7.0,>=0.6.1 from https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl.metadata
+  Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib)
+  Obtaining dependency information for oauthlib>=3.0.0 from https://files.pythonhosted.org/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl.metadata
+  Downloading oauthlib-3.2.2-py3-none-any.whl.metadata (7.5 kB)
+Collecting charset-normalizer<4,>=2 (from requests<3.0.0,>=2.18.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for charset-normalizer<4,>=2 from https://files.pythonhosted.org/packages/21/5b/1b390b03b1d16c7e382b561c5329f83cc06623916aab983e8ab9239c7d5c/charset_normalizer-3.4.1-cp312-cp312-win_amd64.whl.metadata
+  Using cached charset_normalizer-3.4.1-cp312-cp312-win_amd64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.18.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for idna<4,>=2.5 from https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl.metadata
+  Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.18.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for urllib3<3,>=1.21.1 from https://files.pythonhosted.org/packages/6b/11/cc635220681e93a0183390e26485430ca2c7b5f9d33b15c74c2861cb8091/urllib3-2.4.0-py3-none-any.whl.metadata
+  Using cached urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.18.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client)
+  Obtaining dependency information for certifi>=2017.4.17 from https://files.pythonhosted.org/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl.metadata
+  Using cached certifi-2025.4.26-py3-none-any.whl.metadata (2.5 kB)
+Downloading google_api_python_client-2.168.0-py3-none-any.whl (13.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.3/13.3 MB 851.1 kB/s eta 0:00:00
+Downloading google_auth-2.39.0-py2.py3-none-any.whl (212 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 212.3/212.3 kB 995.5 kB/s eta 0:00:00
+Downloading google_auth_httplib2-0.2.0-py2.py3-none-any.whl (9.3 kB)
+Downloading google_auth_oauthlib-1.2.2-py3-none-any.whl (19 kB)
+Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+Downloading google_api_core-2.24.2-py3-none-any.whl (160 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.1/160.1 kB 1.1 MB/s eta 0:00:00
+Downloading httplib2-0.22.0-py3-none-any.whl (96 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.9/96.9 kB 1.1 MB/s eta 0:00:00
+Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.3/181.3 kB 1.1 MB/s eta 0:00:00
+Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+Downloading uritemplate-4.1.1-py2.py3-none-any.whl (10 kB)
+Downloading googleapis_common_protos-1.70.0-py3-none-any.whl (294 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.5/294.5 kB 758.1 kB/s eta 0:00:00
+Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.7/151.7 kB 822.4 kB/s eta 0:00:00
+Downloading proto_plus-1.26.1-py3-none-any.whl (50 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.2/50.2 kB 1.3 MB/s eta 0:00:00
+Using cached protobuf-6.30.2-cp310-abi3-win_amd64.whl (431 kB)
+Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.1/83.1 kB 775.5 kB/s eta 0:00:00
+Using cached pyparsing-3.2.3-py3-none-any.whl (111 kB)
+Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+Using cached certifi-2025.4.26-py3-none-any.whl (159 kB)
+Using cached charset_normalizer-3.4.1-cp312-cp312-win_amd64.whl (102 kB)
+Using cached idna-3.10-py3-none-any.whl (70 kB)
+Using cached urllib3-2.4.0-py3-none-any.whl (128 kB)
+Installing collected packages: urllib3, uritemplate, pyparsing, pyasn1, protobuf, oauthlib, idna, charset-normalizer, certifi, cachetools, rsa, requests, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, requests-oauthlib, google-auth, google-auth-oauthlib, google-auth-httplib2, google-api-core, google-api-python-client
+Successfully installed cachetools-5.5.2 certifi-2025.4.26 charset-normalizer-3.4.1 google-api-core-2.24.2 google-api-python-client-2.168.0 google-auth-2.39.0 google-auth-httplib2-0.2.0 google-auth-oauthlib-1.2.2 googleapis-common-protos-1.70.0 httplib2-0.22.0 idna-3.10 oauthlib-3.2.2 proto-plus-1.26.1 protobuf-6.30.2 pyasn1-0.6.1 pyasn1-modules-0.4.2 pyparsing-3.2.3 requests-2.32.3 requests-oauthlib-2.0.0 rsa-4.9.1 uritemplate-4.1.1 urllib3-2.4.0
+
+[notice] A new release of pip is available: 23.2.1 -> 25.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python.exe -m pip install --upgrade pip
+Requirement already satisfied: pip in d:\yolo-crowd\yolo v5\yolov5\lib\site-packages (23.2.1)
+Collecting pip
+  Obtaining dependency information for pip from https://files.pythonhosted.org/packages/e0/f0/8a2806114cd36e282823fd4d8e88e3b94dc943c2569c350d0c826a49db38/pip-25.1-py3-none-any.whl.metadata
+  Downloading pip-25.1-py3-none-any.whl.metadata (3.6 kB)
+Downloading pip-25.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 860.1 kB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 23.2.1
+    Uninstalling pip-23.2.1:
+      Successfully uninstalled pip-23.2.1
+Successfully installed pip-25.1
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>pip install -r requirements.txt
+Collecting matplotlib>=3.2.2 (from -r requirements.txt (line 4))
+  Downloading matplotlib-3.10.1-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Collecting numpy>=1.18.5 (from -r requirements.txt (line 5))
+  Downloading numpy-2.2.5-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting opencv-python>=4.1.2 (from -r requirements.txt (line 6))
+  Downloading opencv_python-4.11.0.86-cp37-abi3-win_amd64.whl.metadata (20 kB)
+Collecting Pillow (from -r requirements.txt (line 7))
+  Downloading pillow-11.2.1-cp312-cp312-win_amd64.whl.metadata (9.1 kB)
+Collecting PyYAML>=5.3.1 (from -r requirements.txt (line 8))
+  Downloading PyYAML-6.0.2-cp312-cp312-win_amd64.whl.metadata (2.1 kB)
+Collecting scipy>=1.4.1 (from -r requirements.txt (line 9))
+  Downloading scipy-1.15.2-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting torch>=1.7.0 (from -r requirements.txt (line 10))
+  Downloading torch-2.7.0-cp312-cp312-win_amd64.whl.metadata (29 kB)
+Collecting torchvision>=0.8.1 (from -r requirements.txt (line 11))
+  Downloading torchvision-0.22.0-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
+Collecting tqdm>=4.41.0 (from -r requirements.txt (line 12))
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting tensorboard>=2.4.1 (from -r requirements.txt (line 15))
+  Downloading tensorboard-2.19.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting seaborn>=0.11.0 (from -r requirements.txt (line 19))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting pandas (from -r requirements.txt (line 20))
+  Downloading pandas-2.2.3-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Collecting thop (from -r requirements.txt (line 28))
+  Downloading thop-0.1.1.post2209072238-py3-none-any.whl.metadata (2.7 kB)
+Collecting pycocotools>=2.0 (from -r requirements.txt (line 29))
+  Downloading pycocotools-2.0.8-cp312-cp312-win_amd64.whl.metadata (1.1 kB)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Downloading contourpy-1.3.2-cp312-cp312-win_amd64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Downloading fonttools-4.57.0-cp312-cp312-win_amd64.whl.metadata (104 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Downloading kiwisolver-1.4.8-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: pyparsing>=2.3.1 in d:\yolo-crowd\yolo v5\yolov5\lib\site-packages (from matplotlib>=3.2.2->-r requirements.txt (line 4)) (3.2.3)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting filelock (from torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting typing-extensions>=4.10.0 (from torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting sympy>=1.13.3 (from torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading networkx-3.4.2-py3-none-any.whl.metadata (6.3 kB)
+Collecting jinja2 (from torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading fsspec-2025.3.2-py3-none-any.whl.metadata (11 kB)
+Collecting setuptools (from torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading setuptools-80.0.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting colorama (from tqdm>=4.41.0->-r requirements.txt (line 12))
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting absl-py>=0.4 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Downloading absl_py-2.2.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting grpcio>=1.48.2 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Downloading grpcio-1.71.0-cp312-cp312-win_amd64.whl.metadata (4.0 kB)
+Collecting markdown>=2.6.8 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Downloading markdown-3.8-py3-none-any.whl.metadata (5.1 kB)
+Requirement already satisfied: protobuf!=4.24.0,>=3.19.6 in d:\yolo-crowd\yolo v5\yolov5\lib\site-packages (from tensorboard>=2.4.1->-r requirements.txt (line 15)) (6.30.2)
+Collecting six>1.9 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Downloading tensorboard_data_server-0.7.2-py3-none-any.whl.metadata (1.1 kB)
+Collecting werkzeug>=1.0.1 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting pytz>=2020.1 (from pandas->-r requirements.txt (line 20))
+  Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas->-r requirements.txt (line 20))
+  Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=1.7.0->-r requirements.txt (line 10))
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.1.1 (from werkzeug>=1.0.1->tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Downloading MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl.metadata (4.1 kB)
+Downloading matplotlib-3.10.1-cp312-cp312-win_amd64.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 557.3 kB/s eta 0:00:00
+Downloading numpy-2.2.5-cp312-cp312-win_amd64.whl (12.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 556.6 kB/s eta 0:00:00
+Downloading opencv_python-4.11.0.86-cp37-abi3-win_amd64.whl (39.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.5/39.5 MB 760.6 kB/s eta 0:00:00
+Downloading pillow-11.2.1-cp312-cp312-win_amd64.whl (2.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 1.1 MB/s eta 0:00:00
+Downloading PyYAML-6.0.2-cp312-cp312-win_amd64.whl (156 kB)
+Downloading scipy-1.15.2-cp312-cp312-win_amd64.whl (40.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.9/40.9 MB 542.0 kB/s eta 0:00:00
+Downloading torch-2.7.0-cp312-cp312-win_amd64.whl (212.5 MB)
+   ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/212.5 MB 260.1 kB/s eta 0:13:06
+ERROR: Could not install packages due to an OSError: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\Temp\\pip-unpack-dppbfvz9\\torch-2.7.0-cp312-cp312-win_amd64.whl'
+Check the permissions.
+
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python new_test_hj.py
+Traceback (most recent call last):
+  File "D:\YOLO-CROWD\YOLO V5\new_test_hj.py", line 2, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python3 new_test_hj.py
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Apps > Advanced app settings > App execution aliases.
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python new_test_hj.py
+Traceback (most recent call last):
+  File "D:\YOLO-CROWD\YOLO V5\new_test_hj.py", line 2, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>pip install opencv-python
+Collecting opencv-python
+  Using cached opencv_python-4.11.0.86-cp37-abi3-win_amd64.whl.metadata (20 kB)
+Collecting numpy>=1.21.2 (from opencv-python)
+  Using cached numpy-2.2.5-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Using cached opencv_python-4.11.0.86-cp37-abi3-win_amd64.whl (39.5 MB)
+Using cached numpy-2.2.5-cp312-cp312-win_amd64.whl (12.6 MB)
+Installing collected packages: numpy, opencv-python
+Successfully installed numpy-2.2.5 opencv-python-4.11.0.86
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python new_test_hj.py
+Traceback (most recent call last):
+  File "D:\YOLO-CROWD\YOLO V5\new_test_hj.py", line 4, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>pip install pytorch
+Collecting pytorch
+  Downloading pytorch-1.0.2.tar.gz (689 bytes)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Building wheels for collected packages: pytorch
+  Building wheel for pytorch (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+
+  × Building wheel for pytorch (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [23 lines of output]
+      Traceback (most recent call last):
+        File "D:\YOLO-CROWD\YOLO V5\yolov5\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 389, in <module>
+          main()
+        File "D:\YOLO-CROWD\YOLO V5\yolov5\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "D:\YOLO-CROWD\YOLO V5\yolov5\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 280, in build_wheel
+          return _build_backend().build_wheel(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "D:\Temp\pip-build-env-3p5pnpf8\overlay\Lib\site-packages\setuptools\build_meta.py", line 435, in build_wheel
+          return _build(['bdist_wheel', '--dist-info-dir', str(metadata_directory)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "D:\Temp\pip-build-env-3p5pnpf8\overlay\Lib\site-packages\setuptools\build_meta.py", line 423, in _build
+          return self._build_with_temp_dir(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "D:\Temp\pip-build-env-3p5pnpf8\overlay\Lib\site-packages\setuptools\build_meta.py", line 404, in _build_with_temp_dir
+          self.run_setup()
+        File "D:\Temp\pip-build-env-3p5pnpf8\overlay\Lib\site-packages\setuptools\build_meta.py", line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "D:\Temp\pip-build-env-3p5pnpf8\overlay\Lib\site-packages\setuptools\build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 15, in <module>
+      Exception: You tried to install "pytorch". The package named for PyTorch is "torch"
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for pytorch
+Failed to build pytorch
+ERROR: Failed to build installable wheels for some pyproject.toml based projects (pytorch)
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>pip install -r requirements.txt
+Collecting matplotlib>=3.2.2 (from -r requirements.txt (line 4))
+  Using cached matplotlib-3.10.1-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Requirement already satisfied: numpy>=1.18.5 in d:\yolo-crowd\yolo v5\yolov5\lib\site-packages (from -r requirements.txt (line 5)) (2.2.5)
+Requirement already satisfied: opencv-python>=4.1.2 in d:\yolo-crowd\yolo v5\yolov5\lib\site-packages (from -r requirements.txt (line 6)) (4.11.0.86)
+Collecting Pillow (from -r requirements.txt (line 7))
+  Using cached pillow-11.2.1-cp312-cp312-win_amd64.whl.metadata (9.1 kB)
+Collecting PyYAML>=5.3.1 (from -r requirements.txt (line 8))
+  Using cached PyYAML-6.0.2-cp312-cp312-win_amd64.whl.metadata (2.1 kB)
+Collecting scipy>=1.4.1 (from -r requirements.txt (line 9))
+  Using cached scipy-1.15.2-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting torch>=1.7.0 (from -r requirements.txt (line 10))
+  Using cached torch-2.7.0-cp312-cp312-win_amd64.whl.metadata (29 kB)
+Collecting torchvision>=0.8.1 (from -r requirements.txt (line 11))
+  Using cached torchvision-0.22.0-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
+Collecting tqdm>=4.41.0 (from -r requirements.txt (line 12))
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting tensorboard>=2.4.1 (from -r requirements.txt (line 15))
+  Using cached tensorboard-2.19.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting seaborn>=0.11.0 (from -r requirements.txt (line 19))
+  Using cached seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting pandas (from -r requirements.txt (line 20))
+  Using cached pandas-2.2.3-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Collecting thop (from -r requirements.txt (line 28))
+  Using cached thop-0.1.1.post2209072238-py3-none-any.whl.metadata (2.7 kB)
+Collecting pycocotools>=2.0 (from -r requirements.txt (line 29))
+  Using cached pycocotools-2.0.8-cp312-cp312-win_amd64.whl.metadata (1.1 kB)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Using cached contourpy-1.3.2-cp312-cp312-win_amd64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Using cached fonttools-4.57.0-cp312-cp312-win_amd64.whl.metadata (104 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Using cached kiwisolver-1.4.8-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: pyparsing>=2.3.1 in d:\yolo-crowd\yolo v5\yolov5\lib\site-packages (from matplotlib>=3.2.2->-r requirements.txt (line 4)) (3.2.3)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.2.2->-r requirements.txt (line 4))
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting filelock (from torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting typing-extensions>=4.10.0 (from torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting sympy>=1.13.3 (from torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached networkx-3.4.2-py3-none-any.whl.metadata (6.3 kB)
+Collecting jinja2 (from torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached fsspec-2025.3.2-py3-none-any.whl.metadata (11 kB)
+Collecting setuptools (from torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached setuptools-80.0.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting colorama (from tqdm>=4.41.0->-r requirements.txt (line 12))
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting absl-py>=0.4 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Using cached absl_py-2.2.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting grpcio>=1.48.2 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Using cached grpcio-1.71.0-cp312-cp312-win_amd64.whl.metadata (4.0 kB)
+Collecting markdown>=2.6.8 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Using cached markdown-3.8-py3-none-any.whl.metadata (5.1 kB)
+Requirement already satisfied: protobuf!=4.24.0,>=3.19.6 in d:\yolo-crowd\yolo v5\yolov5\lib\site-packages (from tensorboard>=2.4.1->-r requirements.txt (line 15)) (6.30.2)
+Collecting six>1.9 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Using cached tensorboard_data_server-0.7.2-py3-none-any.whl.metadata (1.1 kB)
+Collecting werkzeug>=1.0.1 (from tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Using cached werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting pytz>=2020.1 (from pandas->-r requirements.txt (line 20))
+  Using cached pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas->-r requirements.txt (line 20))
+  Using cached tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=1.7.0->-r requirements.txt (line 10))
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.1.1 (from werkzeug>=1.0.1->tensorboard>=2.4.1->-r requirements.txt (line 15))
+  Using cached MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl.metadata (4.1 kB)
+Using cached matplotlib-3.10.1-cp312-cp312-win_amd64.whl (8.1 MB)
+Using cached pillow-11.2.1-cp312-cp312-win_amd64.whl (2.7 MB)
+Using cached PyYAML-6.0.2-cp312-cp312-win_amd64.whl (156 kB)
+Using cached scipy-1.15.2-cp312-cp312-win_amd64.whl (40.9 MB)
+Downloading torch-2.7.0-cp312-cp312-win_amd64.whl (212.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 212.5/212.5 MB 5.2 MB/s eta 0:00:00
+Downloading torchvision-0.22.0-cp312-cp312-win_amd64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 6.2 MB/s eta 0:00:00
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+Downloading tensorboard-2.19.0-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 6.0 MB/s eta 0:00:00
+Downloading tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+Downloading pandas-2.2.3-cp312-cp312-win_amd64.whl (11.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.5/11.5 MB 3.3 MB/s eta 0:00:00
+Downloading thop-0.1.1.post2209072238-py3-none-any.whl (15 kB)
+Downloading pycocotools-2.0.8-cp312-cp312-win_amd64.whl (83 kB)
+Downloading absl_py-2.2.2-py3-none-any.whl (135 kB)
+Downloading contourpy-1.3.2-cp312-cp312-win_amd64.whl (223 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.57.0-cp312-cp312-win_amd64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 3.0 MB/s eta 0:00:00
+Downloading grpcio-1.71.0-cp312-cp312-win_amd64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 2.7 MB/s eta 0:00:00
+Downloading kiwisolver-1.4.8-cp312-cp312-win_amd64.whl (71 kB)
+Downloading markdown-3.8-py3-none-any.whl (106 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Using cached setuptools-80.0.0-py3-none-any.whl (1.2 MB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 2.8 MB/s eta 0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 2.5 MB/s eta 0:00:00
+Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Downloading MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl (15 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+Downloading fsspec-2025.3.2-py3-none-any.whl (194 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading networkx-3.4.2-py3-none-any.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 2.4 MB/s eta 0:00:00
+Installing collected packages: pytz, mpmath, tzdata, typing-extensions, tensorboard-data-server, sympy, six, setuptools, scipy, PyYAML, Pillow, packaging, networkx, MarkupSafe, markdown, kiwisolver, grpcio, fsspec, fonttools, filelock, cycler, contourpy, colorama, absl-py, werkzeug, tqdm, python-dateutil, jinja2, torch, tensorboard, pandas, matplotlib, torchvision, thop, seaborn, pycocotools
+Successfully installed MarkupSafe-3.0.2 Pillow-11.2.1 PyYAML-6.0.2 absl-py-2.2.2 colorama-0.4.6 contourpy-1.3.2 cycler-0.12.1 filelock-3.18.0 fonttools-4.57.0 fsspec-2025.3.2 grpcio-1.71.0 jinja2-3.1.6 kiwisolver-1.4.8 markdown-3.8 matplotlib-3.10.1 mpmath-1.3.0 networkx-3.4.2 packaging-25.0 pandas-2.2.3 pycocotools-2.0.8 python-dateutil-2.9.0.post0 pytz-2025.2 scipy-1.15.2 seaborn-0.13.2 setuptools-80.0.0 six-1.17.0 sympy-1.14.0 tensorboard-2.19.0 tensorboard-data-server-0.7.2 thop-0.1.1.post2209072238 torch-2.7.0 torchvision-0.22.0 tqdm-4.67.1 typing-extensions-4.13.2 tzdata-2025.2 werkzeug-3.1.3
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python new_test_hj.py
+✔️ Connected to Google Sheet: Crowd
+Traceback (most recent call last):
+  File "D:\YOLO-CROWD\YOLO V5\new_test_hj.py", line 50, in <module>
+    model = attempt_load(weights_path, map_location=device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\YOLO-CROWD\YOLO V5\models\experimental.py", line 118, in attempt_load
+    ckpt = torch.load(w, map_location=map_location, weights_only=False)  # load# load
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\YOLO-CROWD\YOLO V5\yolov5\Lib\site-packages\torch\serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\YOLO-CROWD\YOLO V5\yolov5\Lib\site-packages\torch\serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\YOLO-CROWD\YOLO V5\yolov5\Lib\site-packages\torch\serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\YOLO-CROWD\\weights\\YOLO-CROWD.pt'
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python new_test_hj.py
+✔️ Connected to Google Sheet: Crowd
+Fusing layers...
+✔️ YOLO Model loaded on cpu
+Traceback (most recent call last):
+  File "D:\YOLO-CROWD\YOLO V5\new_test_hj.py", line 56, in <module>
+    for file in sorted(os.listdir(input_folder)):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\YOLO-CROWD\\images'
+
+(yolov5) D:\YOLO-CROWD\YOLO V5>python new_test_hj.py
+✔️ Connected to Google Sheet: Crowd
+Fusing layers...
+✔️ YOLO Model loaded on cpu
+D:\YOLO-CROWD\YOLO V5\yolov5\Lib\site-packages\torch\functional.py:554: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\TensorShape.cpp:4316.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+🖼️ Processed: pi1.jpg | Count: 10
+📊 Logged to Google Sheets: 10 at 2025-04-29 15:56:03
+🖼️ Processed: pi10.jpg | Count: 7
+📊 Logged to Google Sheets: 7 at 2025-04-29 15:56:06
+🖼️ Processed: pi11.jpg | Count: 8
+📊 Logged to Google Sheets: 8 at 2025-04-29 15:56:09
+🖼️ Processed: pi12.jpg | Count: 6
+📊 Logged to Google Sheets: 6 at 2025-04-29 15:56:12
+🖼️ Processed: pi13.jpg | Count: 7
+📊 Logged to Google Sheets: 7 at 2025-04-29 15:56:15
+🖼️ Processed: pi14.jpg | Count: 3
+📊 Logged to Google Sheets: 3 at 2025-04-29 15:56:18
+🖼️ Processed: pi15.jpg | Count: 7
+📊 Logged to Google Sheets: 7 at 2025-04-29 15:56:22
+🖼️ Processed: pi16.jpg | Count: 7
+📊 Logged to Google Sheets: 7 at 2025-04-29 15:56:25
+🖼️ Processed: pi17.jpg | Count: 7
+📊 Logged to Google Sheets: 7 at 2025-04-29 15:56:28
+🖼️ Processed: pi18.jpg | Count: 5
+📊 Logged to Google Sheets: 5 at 2025-04-29 15:56:30
+🖼️ Processed: pi19.jpg | Count: 6
+📊 Logged to Google Sheets: 6 at 2025-04-29 15:56:33
+🖼️ Processed: pi2.jpg | Count: 8
+📊 Logged to Google Sheets: 8 at 2025-04-29 15:56:36
+🖼️ Processed: pi20.jpg | Count: 8
+📊 Logged to Google Sheets: 8 at 2025-04-29 15:56:39
+🖼️ Processed: pi21.jpg | Count: 8
+📊 Logged to Google Sheets: 8 at 2025-04-29 15:56:42
+🖼️ Processed: pi22.jpg | Count: 8
+📊 Logged to Google Sheets: 8 at 2025-04-29 15:56:45
+🖼️ Processed: pi23.jpg | Count: 8
+📊 Logged to Google Sheets: 8 at 2025-04-29 15:56:48
+Traceback (most recent call last):
+  File "D:\YOLO-CROWD\YOLO V5\new_test_hj.py", line 123, in <module>
+    time.sleep(2)
+KeyboardInterrupt
+^C
+(yolov5) D:\YOLO-CROWD\YOLO V5>python -m venv yolov5  
