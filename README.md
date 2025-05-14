@@ -1,4 +1,4 @@
-## 🚀 SmartCrowd Pi: YOLOv5-Powered 🔍 Real-Time Crowd Detection 👥 with GPS 📍 & API-Driven Live Intelligence 🤖📡
+![WhatsApp Image 2025-05-14 at 08 49 04_b81ad8fe](https://github.com/user-attachments/assets/e4cb4276-8978-452d-a6b3-70db96db99ea)## 🚀 SmartCrowd Pi: YOLOv5-Powered 🔍 Real-Time Crowd Detection 👥 with GPS 📍 & API-Driven Live Intelligence 🤖📡
 
 SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**, **Stereo Vision**, and a **Raspberry Pi 4B** mounted on a drone for **real-time crowd detection** and **density estimation**. Integrated with **GPS** and **external APIs**, the system provides **live intelligence**, visual overlays, and automatic reporting to services like **Google Sheets** or cloud dashboards.
 
@@ -60,6 +60,16 @@ SmartCrowd Pi is an advanced, smart surveillance system that utilizes **YOLOv5**
 
 ----
 
+## OUTPUTS
+
+![WhatsApp Image 2025-05-14 at 08 49 04_b81ad8fe](https://github.com/user-attachments/assets/4390cca4-f2ce-49f6-9425-f53228201338)
+
+![WhatsApp Image 2025-05-14 at 08 49 51_2e7540f5](https://github.com/user-attachments/assets/5bb45d64-43ba-483c-b6a7-f8aff6bb122a)
+
+![WhatsApp Image 2025-05-14 at 08 50 29_f16d17b7](https://github.com/user-attachments/assets/c5647543-a202-4c3b-be71-1f6e1d849940)
+
+----
+
 ## 📍 Use Cases
 📦 Smart City Surveillance
 
@@ -91,5 +101,6 @@ graph TD;
     GPS --> API
     Heatmap --> API
     Pi --> Drone
+
 
 
